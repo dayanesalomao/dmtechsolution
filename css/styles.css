@@ -10953,3 +10953,32 @@ a {
 a:hover {
   color: #5b21b6;
 }
+/* ===== PERSONALIZAÇÃO DM TECH (Roxo + Azul) ===== */
+:root{
+  --bs-primary: #7c3aed;       /* roxo */
+  --bs-primary-rgb: 124,58,237;
+}
+
+/* botões e links */
+.btn-primary{
+  background-color:#7c3aed !important;
+  border-color:#7c3aed !important;
+}
+.btn-primary:hover{
+  background-color:#2563eb !important; /* azul no hover */
+  border-color:#2563eb !important;
+}
+a{ color:#7c3aed; }
+a:hover{ color:#2563eb; }
+
+/* overlay “tech” no topo (sem depender da imagem ser perfeita) */
+header.masthead::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background: linear-gradient(90deg, rgba(37,99,235,.55), rgba(124,58,237,.55));
+  pointer-events:none;
+}
+header.masthead{
+  position:relative;
+}
