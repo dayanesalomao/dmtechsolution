@@ -1,0 +1,474 @@
+/* ==========================================================
+   DM Tech Solution - Overrides (Claros + roxo/azul)
+   Coloque este arquivo APÓS o styles.css do template.
+   ========================================================== */
+
+:root{
+  --dm-purple: #6d28d9;
+  --dm-purple-2: #4c1d95;
+  --dm-blue: #2563eb;
+  --dm-blue-2: #1e40af;
+
+  --dm-bg: #f6f8ff;
+  --dm-surface: #ffffff;
+  --dm-text: #0f172a;
+  --dm-muted: #475569;
+
+  --dm-accent: var(--dm-purple);
+
+  --bs-primary: var(--dm-purple);
+  --bs-primary-rgb: 109,40,217;
+}
+
+body{ background: var(--dm-bg); color: var(--dm-text); }
+
+a{ color: var(--dm-purple); }
+a:hover{ color: var(--dm-blue); }
+
+/* Navbar clara + legível */
+#mainNav{
+  background: rgba(255,255,255,.88) !important;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 10px 30px rgba(15,23,42,.06);
+}
+#mainNav .navbar-brand{ font-weight: 900; letter-spacing: .2px; }
+#mainNav .nav-link{
+  color: var(--dm-text) !important;
+  font-weight: 700;
+  opacity: .92;
+}
+#mainNav .nav-link:hover{ color: var(--dm-purple) !important; opacity: 1; }
+
+.divider{ background-color: var(--dm-purple) !important; }
+
+/* HERO claro */
+header.masthead{ position: relative; background-color: #eef2ff; }
+header.masthead::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    radial-gradient(1200px 600px at 10% 20%, rgba(37,99,235,.12), transparent 60%),
+    radial-gradient(900px 500px at 85% 35%, rgba(109,40,217,.14), transparent 55%),
+    linear-gradient(180deg, rgba(255,255,255,.94), rgba(255,255,255,.80));
+  pointer-events:none;
+}
+header.masthead > *{ position: relative; z-index: 1; }
+header.masthead h1{
+  color: var(--dm-text) !important;
+  font-weight: 900 !important;
+  text-shadow: none !important;
+}
+header.masthead p{
+  color: var(--dm-muted) !important;
+  text-shadow: none !important;
+}
+
+/* Botões */
+.btn-primary{
+  background-color: var(--dm-accent) !important;
+  border-color: var(--dm-accent) !important;
+  font-weight: 800;
+}
+.btn-primary:hover, .btn-primary:focus{
+  background-color: var(--dm-blue) !important;
+  border-color: var(--dm-blue) !important;
+}
+.btn-primary:active{
+  background-color: var(--dm-blue-2) !important;
+  border-color: var(--dm-blue-2) !important;
+}
+
+/* WhatsApp sempre visível */
+.btn-whatsapp{ opacity: 1 !important; color:#fff !important; }
+
+/* Cards / imagens */
+.solucao-card{
+  background: var(--dm-surface);
+  border-radius: 16px;
+  border: 1px solid rgba(15,23,42,.06);
+  box-shadow: 0 12px 40px rgba(15,23,42,.06);
+}
+.solucao-img{
+  width:100%;
+  height:260px;
+  object-fit: cover;
+  display:block;
+  filter: brightness(.95) contrast(1.03);
+}
+
+/* Social */
+.dm-social a{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:44px;
+  height:44px;
+  border-radius:999px;
+  background: rgba(109,40,217,.06);
+  border: 1px solid rgba(109,40,217,.10);
+}
+.dm-social a:hover{
+  background: rgba(37,99,235,.08);
+  border-color: rgba(37,99,235,.14);
+}
+.dm-social i{ color: var(--dm-purple); }
+.dm-social a:hover i{ color: var(--dm-blue); }
+
+/* Remove “laranja” herdado */
+.bg-primary{ background-color: rgba(109,40,217,.06) !important; }
+.text-primary{ color: var(--dm-purple) !important; }
+
+/* ===== Como funciona: steps premium ===== */
+.dm-steps{
+  display:grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap:14px;
+}
+.dm-step{
+  background:#fff;
+  border: 1px solid rgba(15,23,42,.06);
+  border-radius:16px;
+  padding:16px 14px;
+  box-shadow: 0 12px 40px rgba(15,23,42,.06);
+  text-align:left;
+  position:relative;
+}
+.dm-step-icon{
+  width:44px; height:44px;
+  border-radius:999px;
+  display:flex; align-items:center; justify-content:center;
+  background: rgba(109,40,217,.08);
+  border: 1px solid rgba(109,40,217,.14);
+  margin-bottom:10px;
+}
+.dm-step-icon i{ font-size: 1.2rem; color: #6d28d9; }
+.dm-step-title{
+  font-weight:900;
+  color:#0f172a;
+  margin-bottom:6px;
+}
+.dm-step-desc{
+  color:#475569;
+  font-size:.95rem;
+  line-height:1.35;
+}
+
+/* Responsivo */
+@media (max-width: 1200px){
+  .dm-steps{ grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 768px){
+  .dm-steps{ grid-template-columns: 1fr; }
+}
+
+@media (max-width: 576px){
+  .solucao-img{ height:220px; }
+}
+
+/* ===== FORÇA COR DA MARCA (REMOVE LARANJA DO TEMPLATE) ===== */
+
+/* Define a cor primária do Bootstrap */
+:root{
+  --bs-primary: #6d28d9 !important;
+  --bs-primary-rgb: 109,40,217 !important;
+}
+
+/* Links */
+a,
+.text-primary{
+  color: #6d28d9 !important;
+}
+
+/* Navbar ativo */
+#mainNav .nav-link.active{
+  color: #6d28d9 !important;
+}
+
+/* Hover da navbar */
+#mainNav .nav-link:hover{
+  color: #2563eb !important;
+}
+
+/* Botões primários */
+.btn-primary{
+  background-color: #6d28d9 !important;
+  border-color: #6d28d9 !important;
+}
+.btn-primary:hover{
+  background-color: #2563eb !important;
+  border-color: #2563eb !important;
+}
+
+/* ===== REMOVE LARANJA DO MENU (SCROLL / ACTIVE / SHRINK) ===== */
+
+/* Estado normal + quando encolhe ao rolar */
+#mainNav .navbar-nav .nav-link,
+#mainNav.navbar-shrink .navbar-nav .nav-link{
+  color: #0f172a !important;
+}
+
+/* Link ativo (seção atual) */
+#mainNav .navbar-nav .nav-link.active,
+#mainNav.navbar-shrink .navbar-nav .nav-link.active{
+  color: #6d28d9 !important;
+}
+
+/* Hover */
+#mainNav .navbar-nav .nav-link:hover,
+#mainNav.navbar-shrink .navbar-nav .nav-link:hover{
+  color: #2563eb !important;
+}
+
+/* Caso o template pinte com .text-primary */
+#mainNav .text-primary,
+#mainNav.navbar-shrink .text-primary{
+  color: #6d28d9 !important;
+}
+
+/* Texto acima do botão */
+.cta-text{
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: #334155;
+}
+
+/* Texto abaixo do botão */
+.cta-subtext{
+  font-size: 1rem;
+  font-weight: 500;
+  color: #475569;
+}
+
+/* HERO COM IMAGEM DE FUNDO */
+header.masthead{
+  background: linear-gradient(
+      rgba(15, 23, 42, 0.75),
+      rgba(15, 23, 42, 0.75)
+    ),
+    url("../assets/img/portfolio/hero-bg.jpg");
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* ===== HERO com imagem (mais visível) ===== */
+header.masthead{
+  position: relative;
+  min-height: 95vh;
+  display: flex;
+  align-items: center;
+
+  background-image: url("../assets/img/portfolio/hero-bg.jpg");
+  background-size: 120%;
+  background-position: center 30%;
+  background-repeat: no-repeat;
+}
+
+/* Overlay mais leve (não apaga a imagem) */
+header.masthead::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    radial-gradient(1200px 600px at 10% 20%, rgba(37,99,235,.10), transparent 60%),
+    radial-gradient(900px 500px at 85% 35%, rgba(109,40,217,.12), transparent 55%),
+    linear-gradient(180deg, rgba(255,255,255,.55), rgba(255,255,255,.35));
+  pointer-events:none;
+}
+
+/* Garante que texto e botão fiquem por cima */
+header.masthead > *{
+  position: relative;
+  z-index: 1;
+}
+
+header.masthead{
+  min-height: 100vh;   /* ocupa a tela inteira */
+  display: flex;
+  align-items: center; /* centraliza verticalmente */
+}
+
+/* ===== Ajuste definitivo do HERO ===== */
+
+header.masthead{
+  min-height: 100vh !important;   /* ocupa tela inteira */
+  padding-top: 8rem;
+  padding-bottom: 8rem;
+  display: flex;
+  align-items: center;
+}
+
+/* ===== HERO: força imagem aparecer e ocupa a tela ===== */
+header.masthead{
+  min-height: 100vh !important;
+  padding-top: 8rem !important;
+  padding-bottom: 8rem !important;
+  display: flex !important;
+  align-items: center !important;
+
+  /* garante que a imagem do style="" seja usada */
+  background-size: cover !important;
+  background-position: center 25% !important;
+  background-repeat: no-repeat !important;
+}
+
+/* Remove/neutraliza overlay que “lava” a imagem */
+header.masthead::before{
+  background: rgba(255,255,255,.25) !important; /* overlay bem leve */
+}
+
+/* Se existir qualquer background-color no header, não atrapalhar */
+header.masthead{
+  background-color: transparent !important;
+}
+
+/* ==========================================================
+   FIM
+   ========================================================== */
+
+
+
+/* ==========================================================
+   HERO mais atrativo (VERSÃO FINAL) — DM Tech
+   ========================================================== */
+
+header.masthead.dm-hero{
+  position: relative !important;
+  min-height: 92vh !important;
+  padding-top: 8.5rem !important;
+  padding-bottom: 5rem !important;
+  display: flex !important;
+  align-items: center !important;
+
+  background-image: url("../assets/img/portfolio/hero-bg.jpg") !important;
+  background-size: cover !important;
+  background-position: center 22% !important;
+  background-repeat: no-repeat !important;
+  background-color: #eef2ff !important;
+  overflow: hidden;
+}
+
+/* Overlay claro com “toque” roxo/azul — não apaga a foto */
+header.masthead.dm-hero::before{
+  content:"" !important;
+  position:absolute !important;
+  inset:0 !important;
+  background:
+    radial-gradient(900px 520px at 12% 18%, rgba(37,99,235,.22), transparent 60%),
+    radial-gradient(900px 520px at 88% 28%, rgba(109,40,217,.20), transparent 55%),
+    linear-gradient(180deg, rgba(246,248,255,.92), rgba(246,248,255,.84)) !important;
+  pointer-events:none !important;
+}
+
+header.masthead.dm-hero > *{
+  position: relative !important;
+  z-index: 1 !important;
+}
+
+.dm-hero-title{
+  font-size: clamp(2.1rem, 3.8vw, 3.35rem) !important;
+  line-height: 1.06 !important;
+  max-width: 18ch;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.dm-hero-subtitle{
+  font-size: 1.08rem !important;
+  max-width: 70ch;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Badges */
+.dm-hero-badges{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+.dm-badge{
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: rgba(255,255,255,.70);
+  border: 1px solid rgba(15,23,42,.08);
+  box-shadow: 0 10px 24px rgba(15,23,42,.06);
+  color: var(--dm-text);
+  font-weight: 700;
+  font-size: .92rem;
+}
+.dm-badge i{ color: var(--dm-purple); }
+
+/* Cards do hero */
+.dm-hero-cards{
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  max-width: 980px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.dm-hero-card{
+  text-align: left;
+  padding: 14px 14px 12px;
+  border-radius: 16px;
+  background: rgba(255,255,255,.72);
+  border: 1px solid rgba(15,23,42,.08);
+  box-shadow: 0 18px 40px rgba(15,23,42,.08);
+  backdrop-filter: blur(10px);
+}
+.dm-hero-card-title{
+  font-weight: 900;
+  color: var(--dm-text);
+  margin-bottom: 6px;
+}
+.dm-hero-card-desc{
+  color: var(--dm-muted);
+  font-size: .94rem;
+  line-height: 1.35;
+}
+
+.dm-hero-note{
+  color: var(--dm-muted);
+  font-size: .98rem;
+}
+
+/* Scroll hint */
+.dm-scroll-hint{
+  position: absolute;
+  left: 50%;
+  bottom: 18px;
+  transform: translateX(-50%);
+  z-index: 2;
+}
+.dm-scroll-hint a{
+  width: 42px;
+  height: 42px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255,255,255,.75);
+  border: 1px solid rgba(15,23,42,.10);
+  box-shadow: 0 12px 30px rgba(15,23,42,.10);
+}
+.dm-scroll-hint i{
+  color: var(--dm-purple);
+  font-size: 1.2rem;
+  animation: dm-bounce 1.35s ease-in-out infinite;
+}
+@keyframes dm-bounce{
+  0%,100%{ transform: translateY(0); }
+  50%{ transform: translateY(4px); }
+}
+
+/* Responsivo hero */
+@media (max-width: 992px){
+  .dm-hero-cards{ grid-template-columns: 1fr; }
+  .dm-hero-title{ max-width: 26ch; }
+}
